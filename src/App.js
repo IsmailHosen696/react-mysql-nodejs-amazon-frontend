@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './components/css/tailwind.css';
+import { UserProvider } from './context/usercontext';
+const Admin = lazy(() => import('./components/pages/Admin'))
+const Cart = lazy(() => import('./components/pages/Cart'))
+const Order = lazy(() => import('./components/pages/Order'))
+const Home = lazy(() => import('./components/pages/Home'))
+const Signup = lazy(() => import('./components/pages/Signup'))
+const Signin = lazy(() => import('./components/pages/Signin'))
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Suspense fallback={<p>loading....</p>}>
+          <Route exact path='/signin' component={Signin} />
+          <Route exact path='/signup' component={Signup} />
+          <Route exact path='/admin' component={Admin} />
+          <UserProvider>
+            <Route exact path='/admin/orders' component={Order} />
+            <Route exact path='/cart' component={Cart} />
+            <Route exact path='/' component={Home} />
+          </UserProvider>
+        </Suspense>
+      </Switch>
+    </Router>
   );
 }
 
