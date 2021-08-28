@@ -1,7 +1,9 @@
 import { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './components/css/tailwind.css';
-import { UserProvider } from './context/usercontext';
+import PrivateRoute from './private/PrivateRoute';
+import dotenv from 'dotenv';
+dotenv.config();
 const Admin = lazy(() => import('./components/pages/Admin'))
 const Cart = lazy(() => import('./components/pages/Cart'))
 const Order = lazy(() => import('./components/pages/Order'))
@@ -15,12 +17,10 @@ function App() {
         <Suspense fallback={<p>loading....</p>}>
           <Route exact path='/signin' component={Signin} />
           <Route exact path='/signup' component={Signup} />
-          <Route exact path='/admin' component={Admin} />
-          <UserProvider>
-            <Route exact path='/admin/orders' component={Order} />
-            <Route exact path='/cart' component={Cart} />
-            <Route exact path='/' component={Home} />
-          </UserProvider>
+          <PrivateRoute exact path='/admin' component={Admin} />
+          <PrivateRoute exact path='/admin/orders' component={Order} />
+          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/' component={Home} />
         </Suspense>
       </Switch>
     </Router>

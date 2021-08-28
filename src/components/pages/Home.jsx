@@ -1,28 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom';
-import { useUserContext } from '../../context/usercontext';
+import React, { useEffect } from 'react'
+import Box from './home/Box';
+import Footer from './home/Footer';
+import Nav from './home/Nav';
+import ProductSlider from './home/ProductSlider';
+import ProductSlider2 from './home/ProductSlider2';
+import Slider from './home/Slider';
 
 export default function Home() {
-    const history = useHistory();
-    const token = localStorage.getItem('token');
-    const { loggedinuser } = useUserContext();
 
     useEffect(() => {
-        document.title = 'Home'
-        if (token) {
-            return null;
-        } else {
-            history.push('/signin');
-        }
+        document.title = 'Home';
     });
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        history.push('/signin')
-    }
+
     return (
-        <div>
-            <p>{loggedinuser && loggedinuser.username}</p>
-            <button onClick={handleLogout} className='bg-red-600 px-5 py-2 rounded text-white cursor-pointer'>logout</button>
+        <div className='bg-gray-50' style={{ fontFamily: "'Poppins',sans-serif" }}>
+            <Nav />
+            <Slider />
+            <Box />
+            <ProductSlider2 />
+            <ProductSlider />
+            <Footer />
         </div>
     )
 }
