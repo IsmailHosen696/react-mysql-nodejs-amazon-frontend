@@ -18,7 +18,7 @@ export default function UseSlider(count) {
             },
             {
                 id: 4,
-                img: 'https://images-eu.ssl-images-amazon.com/images/G/31/img21/Gateway_JWELSSH/June/bank/new/PC-Bunk-SS_1500._CB665104793_.jpg'
+                img: 'https://m.media-amazon.com/images/I/51l8hik5R4L._SX3000_.jpg'
             }
         ];
 

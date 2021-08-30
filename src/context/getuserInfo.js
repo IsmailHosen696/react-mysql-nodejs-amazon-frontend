@@ -7,6 +7,7 @@ export default function UserInfo(token) {
         async function getuserinfo(authtoken) {
             await axios.get('http://localhost:3001', { headers: { Authorizations: authtoken } }).then(data => {
                 setUserInfo(data.data);
+                console.log(data);
             });
         }
     }, [token])

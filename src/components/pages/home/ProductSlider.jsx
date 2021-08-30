@@ -27,13 +27,13 @@ export default function ProductSlider() {
                         <img className='img_overflow object-contain' src="https://m.media-amazon.com/images/I/71pcTYT+ICL._AC_UY218_.jpg" alt="tws" />
                     </div>
                     <div className="img_overflow_cont">
-                        <img className='img_overflow' src="https://m.media-amazon.com/images/I/31PiiJQ53ZL._AC_SY200_.jpg" alt="tws" />
+                        <img className='img_overflow' src="https://m.media-amazon.com/images/I/51LWdRK+wGS._AC_SY200_.jpg" alt="tws" />
                     </div>
                     <div className="img_overflow_cont">
                         <img className='img_overflow object-contain' src="https://m.media-amazon.com/images/I/41j0b60I5+L._AC_UY218_.jpg" alt="tws" />
                     </div>
                     <div className="img_overflow_cont">
-                        <img className='img_overflow object-contain' src="https://m.media-amazon.com/images/I/61ofDumIFGL._AC_UY218_.jpg" alt="tws" />
+                        <img className='img_overflow object-contain' src="https://m.media-amazon.com/images/I/31swmrdF8kL._AC_SY200_.jpg" alt="tws" />
                     </div>
                     <div className="img_overflow_cont">
                         <img className='img_overflow object-contain' src="https://m.media-amazon.com/images/I/71L2iBSyyOL._AC_UY218_.jpg" alt="tws" />

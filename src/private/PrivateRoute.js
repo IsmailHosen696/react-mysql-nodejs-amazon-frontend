@@ -9,7 +9,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
         <Route {...rest} render={props => (
             loginfo && (
-                loginfo.auth && loginfo.user.email === adminEmail && loginfo.user.roll === 'admin' ?
+                loginfo.auth && loginfo.user.email === adminEmail && loginfo.user.role === 'admin' ?
                     <Component {...props} />
                     : <Redirect to="/" />
             )
