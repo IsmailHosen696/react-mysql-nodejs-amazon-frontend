@@ -10,6 +10,8 @@ export default function Items() {
     const [productPrice, setProductPrice] = useState(0);
     const [productDescription, setProductDescription] = useState('');
     const [error, setError] = useState('');
+    const [productType, setProductType] = useState('');
+    const [productFeatures, setProductFeatures] = useState('');
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const { test } = useUpload();
@@ -40,7 +42,7 @@ export default function Items() {
         e.preventDefault();
         setMessage('')
         setError('');
-        if (!productName || !productPrice || !productDescription || productName === undefined || productPrice === undefined || productDescription === undefined || !selectedFile || selectedFile === null) {
+        if (!productName || !productPrice || !productDescription || !productType || !productFeatures || productName === undefined || productPrice === undefined || productDescription === undefined || !selectedFile || selectedFile === null) {
             return setError('All fields are required')
         }
         if (productName.length < 8) {
@@ -49,17 +51,22 @@ export default function Items() {
         if (productDescription.length < 50) {
             return setError('Product description must grater than 50 charecture')
         }
+        if (productFeatures.length < 50) {
+            return setError('Product Features must grater than 50 charecture')
+        }
         if (selectedFile.type.split('/')[0] === 'video') {
             return setError('image type not allowed')
         }
         try {
             setLoading(true);
-            await test(productName, productPrice, productDescription, selectedFile).then(data => {
+            await test(productName, productPrice, productDescription, productFeatures, selectedFile, productType).then(data => {
                 setMessage('item added');
                 setImagepreview(null);
                 setProductDescription('');
                 setProductName('');
                 setProductPrice('');
+                setProductType('');
+                setProductFeatures('')
                 setSelectedFile(null);
             });
         } catch (error) {
@@ -85,8 +92,16 @@ export default function Items() {
                             <input autoComplete='off' value={productPrice || ''} onChange={e => setProductPrice(Number(e.target.value))} type="number" id="productprice" className='py-1 px-5 rounded mt-2 outline-none border h-10' />
                         </div>
                         <div className="flex flex-col px-1 py-4">
+                            <label className='text-sm' htmlFor="productype">Product Type</label>
+                            <input autoComplete='off' value={productType || ''} onChange={e => setProductType((e.target.value).toLocaleLowerCase())} type="text" id="productype" className='py-1 px-5 rounded mt-2 outline-none border h-10' />
+                        </div>
+                        <div className="flex flex-col px-1 py-4">
+                            <label className='text-sm' htmlFor="productfet">Product Features</label>
+                            <textarea autoComplete='off' type="text" value={productFeatures || ''} onChange={e => setProductFeatures(e.target.value)} id="productfet" className='py-2 px-5 rounded mt-2 outline-none border h-28 resize-none leading-7' ></textarea>
+                        </div>
+                        <div className="flex flex-col px-1 py-4">
                             <label className='text-sm' htmlFor="productdesc">Product Description</label>
-                            <textarea autoComplete='off' type="text" value={productDescription || ''} onChange={e => setProductDescription(e.target.value)} id="productdesc" className='py-2 px-5 rounded mt-2 outline-none border h-28 resize-none leading-5' ></textarea>
+                            <textarea autoComplete='off' type="text" value={productDescription || ''} onChange={e => setProductDescription(e.target.value)} id="productdesc" className='py-2 px-5 rounded mt-2 outline-none border h-28 resize-none leading-7' ></textarea>
                         </div>
                         <div className="flex my-2 flex-col px-1 py-4">
                             <label className='text-sm items-center flex' htmlFor="productimg">

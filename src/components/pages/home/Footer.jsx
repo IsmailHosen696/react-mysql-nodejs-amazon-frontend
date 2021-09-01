@@ -49,7 +49,11 @@ export default function Footer() {
                 </div>
                 <div className="border-t border-gray-600 my-5">
                     <div className="container flex flex-col mt-2 mx-auto items-center">
-                        <Link to='#' className='text-white font-bold py-2'>amazon</Link>
+                        <div className="w-20 my-2">
+                            <Link to='#'>
+                                <img src="https://www.startech.com.bd/image/catalog/logo.png" alt="logo" />
+                            </Link>
+                        </div>
                         <div className="flex flex-wrap items-center justify-center px-5 lg:px-48">
                             <Link to='#' className='hover:underline text-white px-2 py-2 text-xs'>
                                 Australia

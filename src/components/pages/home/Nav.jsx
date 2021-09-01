@@ -27,7 +27,11 @@ export default function Nav() {
         <div id='top' className='w-full h-16 justify-center flex' style={{ fontFamily: "'Poppins', sans-serif", background: '#131921' }} >
             <div className="lg:container lg:px-4 w-full flex lg:justify-between justify-start items-center flex-col lg:flex-row">
                 <div className="flex 2xl:px-5 justify-between items-center w-full lg:w-auto  mt-4 lg:mt-0">
-                    <Link className='text-white px-4 text-xl font-semibold lowercase' to='/'>amazon</Link>
+                    <div className="w-20">
+                        <Link to='/'>
+                            <img src="https://www.startech.com.bd/image/catalog/logo.png" alt="logo" />
+                        </Link>
+                    </div>
                     <button onClick={() => { setOpen(!open) }} className='lg:hidden flex px-4'><i className='fas fa-bars text-white'></i></button>
                 </div>
                 <div className={open ? "flex lg:flex lg:py-0 pb-2 pt-10 px-5 lg:w-6/12 lg:mt-0 mt-4 lg:bg-transparent lg:z-0 z-50 w-full lg:p-5" : 'hidden'} style={{ background: '#131921' }}>
@@ -42,8 +46,9 @@ export default function Nav() {
                             <div className='lg:items-center items-start flex flex-col lg:flex-row lg:py-0 py-5'>
                                 <Link to="#" className='text-gray-300 hover:text-gray-200 font-light lg:py-0 py-2 lg:px-2 text-md lg:text-xs'>Hello {loggedinUser.user.username}</Link>
                                 <Link to="/admin/orders" className='text-gray-300 hover:text-gray-200 font-light lg:py-0 py-2 lg:px-2 lg:text-xs'>Admin Panel</Link>
+                                <Link to='/allproducts' className='text-gray-300 hover:text-gray-200 lg:px-2 font-light lg:text-xs lg:py-0 py-2'>All Products</Link>
                                 <Link to="/add/items" className='text-gray-300 hover:text-gray-200 font-light lg:py-0 py-2 lg:px-2 lg:text-xs'>Add Products</Link>
-                                <button className='lg:px-3 py-1 lg:text-xs lg:my-0 my-1 rounded text-red-500 capitalize font-medium cursor-pointer mx-1' onClick={handlesignout}>signout</button>
+                                <button className='lg:px-3 py-1 lg:text-xs lg:my-0 my-1 rounded text-gray-400 capitalize font-semiblod cursor-pointer mx-1' onClick={handlesignout}>signout</button>
                             </div>
                             :
                             <div className='lg:items-center items-start flex flex-col lg:flex-row lg:py-0 py-5'>
@@ -51,7 +56,7 @@ export default function Nav() {
                                 <Link to="/orders" className='text-gray-300 hover:text-gray-200 font-light lg:py-0 py-2 lg:px-2 lg:text-xs'>Orders</Link>
                                 <Link to='/allproducts' className='text-gray-300 hover:text-gray-200 lg:px-2 font-light lg:text-xs lg:py-0 py-2'>All Products</Link>
                                 <Link to="/cart" className='text-gray-300 hover:text-gray-200 font-light lg:py-0 py-2 lg:px-2 lg:text-xs'><i className='fas fa-shopping-cart'></i> Cart</Link>
-                                <button className='lg:px-3 py-1 lg:text-xs lg:my-0 my-1 rounded text-red-500 capitalize cursor-pointer mx-1' onClick={handlesignout}>signout</button>
+                                <button className='lg:px-3 py-1 lg:text-xs lg:my-0 my-1 rounded text-gray-400 capitalize font-semiblod cursor-pointer mx-1' onClick={handlesignout}>signout</button>
                             </div>
                         :
                         <>

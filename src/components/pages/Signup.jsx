@@ -77,7 +77,7 @@ export default function Signup() {
                             <label htmlFor="cpassword">confirm password</label>
                             <input value={confirmPassword || ''} onChange={e => setConfirmPassword(e.target.value)} className='outline-none border h-10 border-gray-200 my-2 px-3 rounded py-1' autoComplete='off' type="password" id="cpassword" />
                         </div>
-                        <button disabled={loading} className={loading ? 'h-10 mt-4 text-white capitalize bg-blue-300 mb-2 rounded' : 'h-10 mt-4 text-white capitalize bg-gradient-to-t from-blue-500 to-blue-400 mb-2 rounded'}>create account</button>
+                        <button disabled={loading} className={loading ? 'h-10 mt-4 text-white capitalize bg-blue-300 mb-2 rounded' : 'h-10 mt-4 text-white capitalize bg-blue-500 mb-2 rounded'}>create account</button>
                     </form>
                     <div className='mt-3 flex items-center'>
                         <p>Already have an account ?

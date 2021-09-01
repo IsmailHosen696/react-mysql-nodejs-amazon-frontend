@@ -1,59 +1,38 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
 }
-
 .productslider {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin: 1em 0;
 }
-
 .productslider_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   max-width: 1300px;
   width: 100%;
   padding: 0.5em;
   background-color: #fff;
 }
-
 .product_heaing {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .product_overflow {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   overflow-x: auto;
 }
-
 .product_overflow::-webkit-scrollbar {
   width: 2px;
   height: 5px;
 }
-
 .productslider_container:hover .product_overflow::-webkit-scrollbar-thumb {
-  background-color: #686868;
+  background-color: rgb(104, 104, 104);
 }
-
 .product_overflow::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background: transparent;
@@ -62,36 +41,25 @@
 .img_overflow_cont {
   max-width: 500px;
   margin: 0.5em 1.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 0.5em;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .img_overflow_cont > img {
   max-width: 300px;
   height: 200px;
 }
-
 .img_overflow_cont > h2 {
   font-size: 0.9em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   margin-top: 1em;
   line-height: 1.3em;
   font-weight: 500;
 }
-
 .text-blue {
   text-decoration: underline;
   padding-left: 1em;
   font-weight: 400;
-  color: #0154cf;
+  color: rgb(1, 84, 207);
 }
-/*# sourceMappingURL=box.css.map */

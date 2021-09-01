@@ -4,6 +4,7 @@ import Footer from './home/Footer';
 import Nav from './home/Nav';
 import ProductSlider from './home/ProductSlider';
 import ProductSlider2 from './home/ProductSlider2';
+import Productype from './home/productype';
 import Slider from './home/Slider';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
             <Box />
             <ProductSlider2 />
             <ProductSlider />
+            <Productype />
             <Footer />
         </div>
     )

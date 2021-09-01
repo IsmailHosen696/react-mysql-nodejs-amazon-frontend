@@ -56,7 +56,7 @@ export default function Signin() {
                             <label htmlFor="password">password</label>
                             <input value={password || ''} onChange={e => setPassword(e.target.value)} className='outline-none border border-gray-200 my-2 h-10 px-3 rounded py-1' type="password" id="password" />
                         </div>
-                        <button disabled={loading} className={loading ? 'h-10 mt-4 text-white bg-blue-300 cursor-not-allowed rounded' : 'h-10 mt-4 text-white capitalize bg-gradient-to-t from-blue-500 to-blue-400 rounded'}>signin</button>
+                        <button disabled={loading} className={loading ? 'h-10 mt-4 text-white bg-blue-300 cursor-not-allowed rounded' : 'h-10 mt-4 text-white capitalize bg-blue-500 rounded'}>signin</button>
                     </form>
                     <div className='mt-3 flex items-center py-2'>
                         <p>Don't have an account ?
